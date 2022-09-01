@@ -1,61 +1,50 @@
 <?php
-    require_once("inc/header_part.php");
+require_once("inc/header.php");
 ?>
-  </head>
-  <body>
-  <main>
-    <div class="container">
+</head>
 
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">Recover Account</span>
-                </a>
-              </div><!-- End Logo -->
-
-              <div class="card mb-3">
-
-                <div class="card-body">
-
-                  <h4 class="pt-4 pb-2">
-                    <p class="text-center small">Enter registered email address</p>
-                  </h4>
-
-                  <form class="row g-3 needs-validation" novalidate>
-
-                    <div class="col-12 mb-3">
-                      <label for="yourUsername" class="form-label">Email</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-warning w-100" type="submit">Send Password recovery email</button>
-                    </div>
-                  
-                  </form>
-
-                </div>
-              </div>
-
-             
-
+<body>
+<div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
-          </div>
         </div>
+        <!-- Spinner End -->
 
-      </section>
 
+        <!-- Sign In Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <form action=""method="post">
+                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary">Forgot Password</h3>
+                            </a>
+                            
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        
+                        
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Send Password recovery email</button>
+                        <p class="text-center mb-0">Don't have an Account? <a href="signup.php">Sign Up</a></p>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Sign In End -->
     </div>
-  </main><!-- End #main -->
+    <!-- JavaScript Libraries -->
+    <?php
+    require_once("inc/script.php");
+    ?>
+</body>
 
-    <?php require_once("inc/script.php"); ?>
-  </body>
 </html>

@@ -1,74 +1,54 @@
 <?php
-require_once("inc/header_part.php");
+require_once("inc/header.php");
 ?>
 </head>
 
 <body>
-	<main>
-		<div class="container">
-
-			<section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-							<div class="d-flex justify-content-center py-4">
-								<a href="index.html" class="logo d-flex align-items-center w-auto">
-									<img src="assets/img/logo.png" alt="">
-									<span class="d-none d-lg-block">Admin Login</span>
-								</a>
-							</div><!-- End Logo -->
-
-							<div class="card mb-3">
-
-								<div class="card-body">
-
-									<div class="pt-4 pb-2">
-										<h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-										<p class="text-center small">Enter your username & password to login</p>
-									</div>
-
-									<form class="row g-3 needs-validation" novalidate>
-
-										<div class="col-12">
-											<label for="yourUsername" class="form-label">Username</label>
-											<div class="input-group has-validation">
-												<span class="input-group-text" id="inputGroupPrepend">@</span>
-												<input type="text" name="username" class="form-control" id="yourUsername" required>
-												<div class="invalid-feedback">Please enter your username.</div>
-											</div>
-										</div>
-
-										<div class="col-12">
-											<label for="yourPassword" class="form-label">Password</label>
-											<input type="password" name="password" class="form-control" id="yourPassword" required>
-											<div class="invalid-feedback">Please enter your password!</div>
-										</div>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
 
 
-										<div class="col-12">
-											<button class="btn btn-primary w-100" type="submit">Login</button>
-										</div>
+        <!-- Sign In Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <form method="post" action="submit/varify-admin.php">
+                        <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <a href="index.html" class="">
+                                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                                </a>
+                                <h3>Sign In</h3>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="floatingInput" required placeholder="name@example.com">
+                                <div class="invalid-feedback">Please enter your username.</div>
+                                <label for="floatingInput">Email address</label>
 
-									</form>
-									<p class='text-center'>
-										<a href="forgot_password.php">Forgot password? recover account here</a>
-									</p>
-								</div>
-							</div>
-
-
-
-						</div>
-					</div>
-				</div>
-
-			</section>
-
-		</div>
-	</main><!-- End #main -->
-
-	<?php require_once("inc/script.php"); ?>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="password" name="password" class="form-control" id="floatingPassword" required placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                            <p class="text-center mb-0">Don't have an Account? <a href="signup.php">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Sign In End -->
+    </div>
+    <!-- JavaScript Libraries -->
+    <?php
+    require_once("inc/script.php");
+    ?>
 </body>
 
 </html>
